@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="control-with-js"></p>
+    <input id="inputId" type="text">
+    <button id='inputBtn'>btn for input </button>
+    <button id='just-fun' onclick="justFunction()">just Function</button>
+    <button id='direct-eventHandelar'>direct event heandelar</button>
+
+
+    <script>
+        // handel with function
+        function justFunction() {
+            let paragraph = document.getElementById('control-with-js')
+            paragraph.innerText = 'This is handle with function'
+
+        }
+
+        // handel with direct event listener
+
+        let p = document.getElementById('control-with-js');
+        document.getElementById('direct-eventHandelar').addEventListener('click', function () {
+            p.innerText = 'This is handle with event handler'
+        })
+
+        // direct
+        let inputValu = document.getElementById('inputId')
+
+
+        let btn = document.getElementById('inputBtn').addEventListener('click', function () {
+            let p = document.getElementById('control-with-js');
+            p.innerText = inputValu.value
+            inputValu.value = ''
+        })
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

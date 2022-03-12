@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Summary</title>
+</head>
+
+<body>
+
+    <h2>bubble-event</h2>
+
+    <div id="div">
+        <h2>div</h2>
+        <ul id="ul">
+            <p>ul</p>
+            <li id="item2" class="item">friend-1</li>
+            <li id="item2" class="item">friend-2</li>
+            <li id="item2" class="item">friend-3</li>
+            <li id="item2" class="item">friend-4</li>
+            <li id="item2" class="item">friend-5</li>
+        </ul>
+    </div>
+    <script>
+
+
+        document.getElementById('div').addEventListener('click', function (e) {
+            console.log('div is click');
+
+        })
+        document.getElementById('ul').addEventListener('click', function (e) {
+            console.log('ul is click');
+        })
+        document.getElementById('item2').addEventListener('click', function (e) {
+            console.log('item 2 is click');
+            e.stopImmediatePropagation()
+        })
+    </script>
+</body>
+
+</html>

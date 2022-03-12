@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section id="sec">
+        <div class="players">
+            <h4 class="player-name">player-1</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cumque, quo odit nisi esse ullam at? Nihil
+                ad
+                doloribus dolores.</p>
+        </div>
+        <div class="players">
+            <h4 class="player-name">player-2</h4>
+            <p>Voluptas laudantium laboriosam error officia aspernatur praesentium qui natus ipsum incidunt nam quas
+                provident rerum, cupiditate explicabo nihil officiis ducimus!</p>
+        </div>
+        <div class="players">
+            <h4 class="player-name">player-3</h4>
+            <p>Quam, dolore tempora? Corporis, quia! Eligendi eius corrupti, consequuntur praesentium soluta natus
+                consectetur quas minima voluptas quasi, ullam dolorum veritatis.</p>
+        </div>
+        <div class="players">
+            <h4 class="player-name">player-4</h4>
+            <p>Rem nisi modi tempora expedita cumque eius reiciendis, et harum reprehenderit iste vero, sint facilis
+                natus,
+                fugit sapiente quis est.</p>
+        </div>
+        <div class="players">
+            <h4 class="player-name">player-5</h4>
+            <p>Eaque ducimus molestias vitae facere, dolore quia ea provident iusto asperiores commodi. Provident ad
+                quidem
+                necessitatibus harum error nesciunt qui!</p>
+        </div>
+
+
+    </section>
+    <button id="btn" class="btn">add player</button>
+
+    <script>
+        let id = document.getElementById('sec')
+        function addStyle(i) {
+            i.style.border = '1px solid red'
+            i.style.borderRadius = "10px"
+            i.style.margin = "10px"
+            i.style.padding = "10px"
+
+        }
+
+        let players = document.querySelectorAll('.players');
+
+        for (let i of players) {
+            addStyle(i)
+
+
+        }
+
+
+        document.getElementById('btn').addEventListener('click', function () {
+
+            let player = document.createElement('div')
+            player.classList.add('players')
+            player.innerHTML = ` <h4 class="player-name">New Player</h4>
+            <p>Eaque ducimus molestias vitae facere, dolore quia ea provident iusto asperiores commodi. Provident ad
+                quidem
+                necessitatibus harum error nesciunt qui!</p>
+     `
+            id.append(player)
+            addStyle(player)
+
+        })
+        sec.addEventListener('click', function (e) {
+            console.log(e.target.tagName.toLowerCase());
+            if (e.target.tagName.toLowerCase() == 'div') {
+
+                e.target.style.background = "skyBlue"
+            } else {
+                e.target.parentNode.style.background = 'Blue'
+            }
+        })
+
+    </script>
+</body>
+
+</html>
